@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --Marineblue: rgb(2, 41, 90);
+  --MarineblueHover: hsl(213, 93%, 30%);
+  --Purplishblue: rgb(71, 61, 255);
+  --Pastelblue: rgb(173, 190, 255);
+  --Lightblue: rgb(191, 226, 253);
+  --Strawberryred: rgb(237, 53, 72);
+  --Coolgray: rgb(150, 153, 171);
+  --Lightgray: rgb(214, 217, 230);
+  --Magnolia: rgb(240, 246, 255);
+  --Alabaster: rgb(250, 251, 255);
+  --White: rgb(255, 255, 255);
+  --a: rgb(248, 249, 254);
+}
+
+@layer base {
+  .bg-Magnolia {
+    background-color: var(--Magnolia);
+  }
+  .bg-Marineblue {
+    background-color: var(--Marineblue);
+  }
+  .bg-MarineblueHover {
+    background-color: var(--MarineblueHover);
+  }
+  .bg-Pastelblue {
+    background-color: var(--Pastelblue);
+  }
+  .bg-Purplishblue {
+    background: var(--Purplishblue);
+  }
+  .border-Magnolia {
+    border: 1px solid var(--Magnolia);
+  }
+  .border-top-Coolgray {
+    border-top: 1px solid var(--Coolgray);
+  }
+  .borderColor-Pastelblue {
+    border-color: var(--Pastelblue);
+  }
+  .text-White {
+    color: var(--White);
+  }
+  .text-Coolgray {
+    color: var(--Coolgray);
+  }
+  .text-Marineblue {
+    color: var(--Marineblue);
+  }
+  .text-Alabaster {
+    color: var(--Alabaster);
+  }
+  .text-Pastelblue {
+    color: var(--Pastelblue);
+  }
+  #root {
+    font-family: "Ubuntu", sans-serif;
+    background-color: var(--Magnolia);
+    min-height: 100vh;
+  }
+  main {
+    @apply relative bottom-20 lg:bottom-0 flex flex-col justify-between lg:rounded-none rounded-xl p-5 lg:px-0 lg:py-9 mx-auto max-w-[450px] w-[90%] bg-white;
+  }
+  h2 {
+    @apply text-2xl font-bold;
+  }
+
+  p {
+    @apply text-Coolgray text-sm lg:text-base;
+  }
+
+  button {
+    @apply px-9 py-4 lg:rounded-lg rounded-md font-medium;
+  }
+
+  button.transparentBtn {
+    @apply bg-transparent text-Coolgray;
+  }
+
+  button.transparentBtn:hover {
+    @apply text-Marineblue;
+  }
+
+  button.nextBtn {
+    @apply text-White bg-Marineblue;
+  }
+
+  button.nextBtn:hover {
+    @apply bg-MarineblueHover;
+  }
+  /**************
+  * Side Bar
+  **************/
+  .SideBar {
+    background-image: url("./assets/images/bg-sidebar-mobile.svg");
+    /* background-position: center; */
+    background-size: cover;
+  }
+  @media (min-width: 1024px) {
+    .SideBar {
+      background-image: url("./assets/images/bg-sidebar-desktop.svg");
+    }
+  }
+  /*******************
+  Personal Information
+  *******************/
+  form {
+    @apply text-Coolgray;
+  }
+
+  form > label span {
+    @apply block text-sm font-medium text-slate-700;
+  }
+
+  form > label > input {
+    @apply text-Marineblue font-medium mt-1 block w-full px-3 py-2 bg-white border rounded-md text-sm  placeholder-slate-400
+    focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500;
+  }
+
+  form > label > input::placeholder {
+    @apply font-medium text-Coolgray;
+  }
+
+  .personalInfo__inputValid > input {
+    @apply border-pink-500 text-pink-600
+focus:border-pink-500 focus:ring-pink-500;
+  }
+
+  /* .personalInfo__errorMessage {
+    @apply text-pink-500 font-bold text-xs;
+  } */
+
+  /*******************
+  Select plan
+  *******************/
+  .selectPlan__toggleIcon::before {
+    @apply w-3 h-3 rounded-full block bg-white;
+    content: "";
+  }
+}
+/*******************
+  Pick add
+  *******************/
